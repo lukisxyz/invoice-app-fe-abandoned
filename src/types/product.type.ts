@@ -3,11 +3,15 @@ export type Discount = {
   amount: number;
 };
 
-export type Fruit = {
+export type Product = {
   id: string;
   name: string;
   description: string;
   price: number;
   discount: Discount | null;
   image: string;
+};
+
+export type Cart = Product & {
+  qty: number;
 };

@@ -6,9 +6,13 @@ type MenuItemType = { label: string; action: () => void };
 export default function Header() {
   const nav = useNavigate();
   const Menus: Array<MenuItemType> = [
+    // {
+    //   label: "Search",
+    //   action: () => console.log("product"),
+    // },
     {
-      label: "Search",
-      action: () => console.log("product"),
+      label: "Product",
+      action: () => nav("/product"),
     },
     {
       label: "Account",

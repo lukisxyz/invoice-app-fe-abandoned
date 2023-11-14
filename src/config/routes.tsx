@@ -7,6 +7,8 @@ import {
 import { HomeLoader, HomePage } from "../pages/home";
 import { AccountPage } from "../pages/account";
 import { CartPage } from "../pages/cart";
+import { ProductLoader, ProductPage } from "../pages/product";
+import CartLoader from "../pages/cart/loader";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +19,11 @@ export const router = createBrowserRouter([
         path: "",
         element: <HomePage />,
         loader: HomeLoader,
+      },
+      {
+        path: "/product",
+        element: <ProductPage />,
+        loader: ProductLoader,
       },
       {
         path: "/product/:productId",
@@ -30,6 +37,7 @@ export const router = createBrowserRouter([
       {
         path: "/cart",
         element: <CartPage />,
+        loader: CartLoader,
       },
     ],
   },

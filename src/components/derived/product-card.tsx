@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { Discount, Fruit } from "../../types/product.type";
+import { Discount, Product } from "../../types/product.type";
 import LazyImg from "../base/image";
 
 export default function ProductCard(
-  props: Fruit & { islistView?: boolean; classNames?: string }
+  props: Product & { islistView?: boolean; classNames?: string }
 ) {
   const {
     classNames,

@@ -3,7 +3,7 @@ import ProductCard from "../../components/derived/product-card";
 import { Product } from "../../types/product.type";
 import { useMobileScreen } from "../../hooks/useMobileScreen";
 
-export default function HomePage() {
+export default function ProductPage() {
   const { data } = useLoaderData() as { data: Array<Product> };
   const isMobileView = useMobileScreen(430);
   return (

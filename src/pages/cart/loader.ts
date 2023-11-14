@@ -1,7 +1,7 @@
 import { json } from "react-router-dom";
 import { Product } from "../../types/product.type";
 
-export default function HomeLoader() {
+export default function CartLoader() {
   const seedData: Array<Product> = [
     {
       id: "1",
