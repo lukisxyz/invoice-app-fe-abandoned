@@ -1,16 +1,29 @@
 import { Link } from "react-router-dom";
-import { useMobileScreen } from "../../hooks/useMobileScreen";
 import { Discount, Fruit } from "../../types/product.type";
 import LazyImg from "../base/image";
 
-export default function ProductCard(props: Fruit & { islistView: boolean }) {
-  const { id, name, description, discount, image, price, islistView } = props;
-  const isSmallScreen = useMobileScreen();
-  const isUseListView = islistView ? isSmallScreen : false;
+export default function ProductCard(
+  props: Fruit & { islistView?: boolean; classNames?: string }
+) {
+  const {
+    classNames,
+    id,
+    name,
+    description,
+    discount,
+    image,
+    price,
+    islistView,
+  } = props;
   const newPrice = countNewPrice(discount, price);
   return (
-    <Link title={name} aria-label={name} to={`/product/${id}`}>
-      {isUseListView ? (
+    <Link
+      className={`${classNames} flex-shrink-0`}
+      title={name}
+      aria-label={name}
+      to={`/product/${id}`}
+    >
+      {islistView ? (
         <div className="flex h-20 gap-1 bg-white border shadow-sm rounded-md overflow-hidden w-full max-w-md">
           <div className="h-20 w-20 flex-shrink-0 overflow-hidden">
             <LazyImg

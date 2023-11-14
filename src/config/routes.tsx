@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "../pages/home-page/page";
-import HomeLoader from "../pages/home-page/loader";
-import LayoutContainer from "./container";
-import ProductPage from "../pages/product-page/page";
-import ProductLoader from "../pages/product-page/loader";
-import ProductDetailPage from "../pages/product-detail-page/page";
-import ProductDetailLoader from "../pages/product-detail-page/loader";
+import LayoutContainer from "../components/layout/container";
+import {
+  ProductDetailPage,
+  ProductDetailLoader,
+} from "../pages/product-detail";
+import { HomeLoader, HomePage } from "../pages/home";
+import { AccountPage } from "../pages/account";
+import { CartPage } from "../pages/cart";
 
 export const router = createBrowserRouter([
   {
@@ -18,14 +19,17 @@ export const router = createBrowserRouter([
         loader: HomeLoader,
       },
       {
-        path: "/product",
-        element: <ProductPage />,
-        loader: ProductLoader,
-      },
-      {
         path: "/product/:productId",
         element: <ProductDetailPage />,
         loader: ProductDetailLoader,
+      },
+      {
+        path: "/account",
+        element: <AccountPage />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
       },
     ],
   },
